@@ -12,8 +12,11 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import android.widget.*;
+
 public class MainActivity extends AppCompatActivity {
 
+    private int counter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,6 +32,26 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+        counter = 50;
+        TextView t = (TextView) findViewById(R.id.CounterView);
+        t.setText(String.valueOf(counter));
+    }
+
+    public void IncrementButtonClicked(View v) {
+
+        TextView t = (TextView) findViewById(R.id.CounterView);
+        counter = counter + 1;
+        t.setText(String.valueOf(counter));
+
+    }
+
+    public void DecrementButtonClicked(View v) {
+
+        TextView t = (TextView) findViewById(R.id.CounterView);
+        counter = counter - 1;
+        t.setText(String.valueOf(counter));
+
     }
 
     @Override
